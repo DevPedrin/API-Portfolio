@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+  //output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model atividades {
+  id             Int      @id @default(autoincrement())
+  dta            DateTime @db.Date
+  nome_atividade String
+  descricao      String?
+  link           String?
+}
